@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  link: string;
+  github?: string;
+}
+
+const { title, description, image, technologies, link, github } = Astro.props;
+---
+
+<article class="bg-white rounded-xl shadow-lg overflow-hidden group">
+  <div class="relative overflow-hidden aspect-video">
+    <img 
+      src={image || "/placeholder.svg"} 
+      alt={title} 
+      class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div class="absolute bottom-4 left-4 right-4 flex gap-4">
+        <a 
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+        >
+          Ver proyecto
+        </a>
+        {github && (
+          <a 
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+          >
+            Ver código
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-2">{title}</h3>
+    <p class="text-gray-600 mb-4">{description}</p>
+    <div class="flex flex-wrap gap-2">
+      {technologies.map(tech => (
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</article>
+

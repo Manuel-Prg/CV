@@ -9,16 +9,31 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="bg-white min-h-screen">
-    <main class="max-w-4xl mx-auto p-6">
+  <body class="bg-white">
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            JM
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">Sobre mí</a>
+            <a href="#skills" class="text-gray-700 hover:text-blue-600 transition-colors">Habilidades</a>
+            <a href="#projects" class="text-gray-700 hover:text-blue-600 transition-colors">Proyectos</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-16">
       <slot />
     </main>
   </body>
 </html>
-
