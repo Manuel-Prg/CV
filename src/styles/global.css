@@ -1,0 +1,5 @@
+/* Remove the @import "tailwindcss" line */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

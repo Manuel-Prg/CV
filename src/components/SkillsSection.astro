@@ -1,0 +1,33 @@
+---
+import SkillCategory from "./SkillCategory.astro";
+---
+
+<section id="skills" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        Mis Habilidades
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <SkillCategory 
+            title="Frontend"
+            skills={[
+              { name: "HTML/CSS", level: 70 },
+              { name: "JavaScript", level: 60 },
+              { name: "React", level: 40},
+              { name: "Astro", level: 40 }
+            ]}
+          />
+          <SkillCategory 
+            title="Backend"
+            skills={[
+              { name: "Node.js", level: 40 },
+              { name: "Express", level: 40 },
+              { name: "SQL", level: 70 },
+              {name: "FireBase", level: 50}
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
